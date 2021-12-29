@@ -53,7 +53,7 @@ export function login(email, password) {
     }
     // console.log(response.status);
     const data = await response.json();
-    console.log(data);
+
     if (!data.data.success) {
       dispatch(loginFailed(data.data.message));
     }

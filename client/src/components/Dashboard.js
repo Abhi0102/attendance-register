@@ -27,10 +27,8 @@ function Dashboard(props) {
   function handlePunch(e) {
     setChecker(!checker);
     if (e.target.value === "in") {
-      console.log("In detected");
       props.dispatch(punchIn(props.auth.user._id, new Date()));
     } else {
-      console.log("Out Detected");
       props.dispatch(punchOut(props.auth.user._id, new Date()));
     }
   }
@@ -46,6 +44,7 @@ function Dashboard(props) {
           >
             Punch In
           </button>
+          {}
         </div>
         <div className="col-md-2 col-sm-2 col-xs-2">
           <button
@@ -56,6 +55,12 @@ function Dashboard(props) {
             Punch Out
           </button>
         </div>
+        {props.attendance.success && (
+          <div className="text-success">{props.attendance.success}</div>
+        )}
+        {props.attendance.error && (
+          <div className="text-danger">{props.attendance.error}</div>
+        )}
       </div>
 
       {displayData && (
@@ -116,6 +121,7 @@ function Dashboard(props) {
 function mapStateToProps(state) {
   return {
     auth: state.auth,
+    attendance: state.attendance,
   };
 }
 

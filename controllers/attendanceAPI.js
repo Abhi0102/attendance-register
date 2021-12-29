@@ -55,7 +55,7 @@ module.exports.punchOut = async function (req, res) {
       return res.status(200).json({
         data: {
           success: true,
-          message: "Successfully Punched in",
+          message: "Successfully Punched out  ",
         },
       });
     } else {

@@ -6,7 +6,7 @@ import {
 } from "../actions/actionType";
 
 const initialAttendanceState = {
-  punchDetail: [],
+  success: null,
   error: null,
 };
 export default function attendance(state = initialAttendanceState, action) {
@@ -16,12 +16,13 @@ export default function attendance(state = initialAttendanceState, action) {
       return {
         ...state,
         error: action.error,
+        success: null,
       };
     case PUNCH_IN_SUCCESS:
     case PUNCH_OUT_SUCCESS:
       return {
         ...state,
-        // punchDetail: [action.punchDetail, ...punchDetail],
+        success: action.success,
         error: null,
       };
     default:
