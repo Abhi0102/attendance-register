@@ -12,7 +12,7 @@ function Navbar(props) {
     <nav className="navbar navbar-expand-lg  fixed-top navbar-light bg-light">
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
-          Bank Holidays
+          Attendance
         </a>
         <button
           className="navbar-toggler"
